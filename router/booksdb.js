@@ -1,3 +1,5 @@
+const { title } = require("process");
+
 let books = {
       1: {"author": "Chinua Achebe","title": "Things Fall Apart", "reviews": {} },
       2: {"author": "Hans Christian Andersen","title": "Fairy tales", "reviews": {} },
@@ -8,7 +10,16 @@ let books = {
       7: {"author": "Unknown","title": "Nj\u00e1l's Saga", "reviews": {} },
       8: {"author": "Jane Austen","title": "Pride and Prejudice", "reviews": {} },
       9: {"author": "Honor\u00e9 de Balzac","title": "Le P\u00e8re Goriot", "reviews": {} },
-      10: {"author": "Samuel Beckett","title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": {} }
+      10: {"author": "Samuel Beckett","title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": {} },
+      9780140449136: { 
+  "author": "Taurus Merriweather", 
+  "title": "Meditations", 
+  "reviews": {
+    "user1": "A timeless classic", 
+    "user2": "Very inspiring"
+  }
+}
+
 }
 
 module.exports=books;
