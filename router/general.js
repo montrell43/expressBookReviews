@@ -36,6 +36,7 @@ public_users.get('/', "async/books", async (req, res)=> {
 
 public_users.get('async2/isbn/:isbn', async (req, res) => {
   try {
+    const isbn = req.params.isbn;
     const response = await axios.get(`http:/localhost:5000/isbn/${isbn}`);
     return res.status(200).json(response.data)
   } catch (error) {
@@ -45,10 +46,21 @@ public_users.get('async2/isbn/:isbn', async (req, res) => {
 
 public_users.get('async2/author/:author', async (req, res) => {
   try {
+    const author = req.params.author;
     const response = await axios.get(`http:/localhost:5000/author/${author}`);
     return res.status(200).json(response.data)
   } catch (error) {
     return res.status(404).json({ message: "Author not found or error fetching author data"})
+  }
+});
+
+public_users.get('async2/title/:title', async (req, res) => {
+  try {
+    const title = req.params.title;
+    const response = await axios.get(`http:/localhost:5000/title/${title}`);
+    return res.status(200).json(response.data)
+  } catch (error) {
+    return res.status(404).json({ message: "Title not found or error fetching title data"})
   }
 });
 
